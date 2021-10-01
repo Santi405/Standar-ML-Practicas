@@ -53,3 +53,33 @@ val L = [1,2,3,4,5];
 chauSeg(L);
 
 
+--- 7.1 ---
+fun sumElem(nil) = 0
+|   sumElem(x::xs) = sumElem(xs) + x;
+
+sumElem([1,2,3]);
+
+
+--- 7.2 ---
+fun sumElem(nil) = 1
+|   sumElem(x::xs) = sumElem(xs) * x;
+
+sumElem([1,2,3]);
+
+
+--- 7.3 ---
+fun sumTupla(tup:int*int) = #1 tup + #2 tup;
+
+fun sumListElem(nil) = nil
+|   sumListElem(x::xs) = [sumTupla(x)] @ sumListElem(xs);
+
+sumListElem([(1,2), (3,4), (5,6)]);
+
+
+--- 7.4 ---
+fun switch(nil) = nil
+|   switch(x::nil) = [x]
+|   switch(x::xs) = [hd(xs)] @ [x] @ switch(tl(xs));
+
+
+switch([1,2,3,4,5,6,7,8,9]);
