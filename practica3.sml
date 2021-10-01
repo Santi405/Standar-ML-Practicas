@@ -2,7 +2,7 @@
 fun cubo
 
 
---- 2 ---
+--- 2.1 ---
 fun menor(a,b,c) = 
         if a>b andalso a>c then
           a
@@ -16,7 +16,7 @@ menor(tup);
 
 
 
---- 2.1 ---
+--- 2.2 ---
 fun menAMay(a,b,c) = 
 if a > b then
         if c < b then
