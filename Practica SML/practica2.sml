@@ -1,5 +1,7 @@
 --- 1 ---
-fun cubo
+fun cubo(x:real) = x*x*x;
+
+cubo(2.0);
 
 
 --- 2.1 ---
