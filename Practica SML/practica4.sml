@@ -51,3 +51,27 @@ elim(i,L);
 
 
 (*--- 2.1 ---*)
+fun repNM(n,0) = nil
+  | repNM(n,m) = [n] @ repNM(n,m-1);
+
+repNM(3,8);
+
+
+(*--- 2.2 ---*)
+fun repNM(n,0) = nil
+  | repNM(n,m) = [n] @ repNM(n,m-1);
+
+fun repetir(x) = repNM(x,x);
+
+repetir(5);
+
+
+(*--- 4 ---*)
+fun letraAparece(y, "") = false
+  | letraAparece(y,x) = if y = hd(explode(x)) then
+                          true
+                        else
+                          letraAparece(y, implode(tl(explode(x))));
+
+
+(*--- 5 ---*)
