@@ -1,1 +1,0 @@
-pinga pinga dou
