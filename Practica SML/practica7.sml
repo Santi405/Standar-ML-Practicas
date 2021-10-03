@@ -43,3 +43,14 @@ aMayus(L);
 
 
 (* --- 2.1 --- *)
+fun maxRe(nil) = 0.0
+  | maxRe(x::xs) = if x > maxRe(xs) then                              (* Tampoco se como funciona, pero lo hace*) (*Al final entendí*)
+                        x
+                   else
+                        maxRe(xs);
+
+val L = [1.0, 1.1, 1.9, 2.0];
+maxRe(L);
+
+
+(* --- 2.2 --- *)
