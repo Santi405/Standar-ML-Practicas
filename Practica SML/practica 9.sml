@@ -39,3 +39,34 @@ end;
 val L = [1.2,3.4,5.6];
 maxList(L);
 
+
+
+(* ----- 4 ----- *)
+fun sumpar(L : (int * int) list) = 
+let
+   fun sum(z : (int * int), nil) = z
+    |  sum(z : (int * int), (x,y)::(lst:(int * int) list)) = sum((#1(z) + x, #2(z) + y), lst)
+in
+   sum((0,0), L)
+end;
+
+val L = [(1,2),(3,4),(5,6)];
+sumpar(L);
+
+
+
+(* ----- 5 ----- *)
+fun truePot(x : real, i : int) =
+let
+   fun pot(y : real, 0) = 1.0
+    |  pot(y : real, z : int) = y * pot(y, z-1)
+in
+  pot(x, round(pot(2.0,i))) (* It uses round cause it only acepts int*)
+end;
+
+val t = (2.0,);
+truePot(t);
+
+
+
+(* ----- 6 ----- *)
