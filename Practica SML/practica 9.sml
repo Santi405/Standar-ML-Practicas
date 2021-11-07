@@ -70,3 +70,28 @@ truePot(t);
 
 
 (* ----- 6 ----- *)
+
+fun numSum(L : int list) = 
+let
+  fun ad((x, y) : int * int, nil) = (0, 0)
+    | ad((x, y) : int * int, a :: nil) = (x + a, y)
+    | ad((x, y) : int * int, a :: b :: nil) = (x + a, y + b)
+    | ad((x, y) : int * int, a :: b :: (lst : int list)) = ad((x + a, y + b), lst)
+in
+  ad((0,0), L)
+end;
+
+val L = [1,2];
+numSum(L);
+
+
+
+(* ----- 7 ----- *)
+
+fun myfilter(P) =
+let
+    fun f nil = nil
+    |   f (x::xs) = if (P x) then x::(f xs) else f xs
+in
+  f
+end;
